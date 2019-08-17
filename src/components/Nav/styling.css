@@ -1,12 +1,4 @@
-.activeLinks {
-    display: flex;
-    justify-content: flex-end;
-}
-.navLinks {
-    display: flex;
-    justify-content: center;
-}
 .nav-bottom{
     border-bottom: 1px solid lightgrey;
-    margin-top: 60px
+    margin-top: 55px
 }

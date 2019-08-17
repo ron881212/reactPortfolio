@@ -1,15 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Websites from './pages/Websites'
+import PhoneApps from './pages/PhoneApps'
+import About from './pages/About'
+import Contact from './pages/Contact'
 import Nav from './components/Nav'
 
 function App() {
   return (
-    <Nav />
+    <Router>
+      <div>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Websites} />
+          <Route exact path="/PhoneApps" component={PhoneApps} />
+          <Route exact path="/About" component={About} />
+          <Route exact path="/Contact" component={Contact} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
-
-const styles = {
-  color: 'blue'
 }
 
 export default App;
