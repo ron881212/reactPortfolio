@@ -2,12 +2,11 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './styling.css'
 
-export default class NavBar extends React.Component {
+export default class NavBar extends React.Component {  
   render() {
     return (
-      <div className='nav-bottom'>
-      <div className='container fixed-top'>
-        <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light nav-style fixed-top">
+        <div className='container'>
           <a className="navbar-brand">Ronald Glover</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -28,9 +27,8 @@ export default class NavBar extends React.Component {
                 </li>
               </ul>
             </div>
-        </nav>
-      </div>
-      </div>
+        </div>
+      </nav>
     );
   }
 }
