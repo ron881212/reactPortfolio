@@ -1,5 +1,14 @@
 [
     {
-        "": ""
+        "name":"NBA Search",
+        "picture": "/images/webApps/nbaSearch.png"
+    },
+    {
+        "name":"My Funko",
+        "picture": "./images/webApps/myFunko.png"
+    },
+    {
+        "name":"Winc Stories",
+        "picture": "./images/webApps/wincStories.png"
     }
 ]
