@@ -10,31 +10,21 @@ const Websites = props => {
     const [projects] = useState(webProjects)
     const styles = {
         cardRow: {
-           display:'flex',
+           display: 'none',
            flexWrap: 'wrap',
+           marginTop: '200px',
            flexDirection: 'row' ,
-           alignItems: 'flex-end',
            justifyContent: 'space-evenly',
-           alignContent: 'flex-end',
-           marginTop: '200px'
         }
     }
 
-    // This function grows projects on hover
-    // $(".projectCard").mouseover(function () {
-    //     $(this).css("transition", "ease 0s");
-    //     $(this).css("width", "28rem");
-    //     $(this).mouseout(function () {
-    //       $(this).css("width", "25rem")
-    //     })
-    //   })
-
     // This function raises and hides the hero image
     function showProjects() {
+        showCards()
         hero.current.style.opacity = "0"
+        webCards.current.style.display = "flex"
         hero.current.style.transition = "ease 1s"
         hero.current.style.transform = "translate(0px, -300px)"
-        showCards()
     }
     // This function lowers and show the hero image
     // function hideProjects() {
@@ -57,7 +47,8 @@ const Websites = props => {
         projectCard1.style.opacity = "1"
         projectCard1.style.transition = "ease 1s"
         projectCard1.style.transform = "translate(0px, -400px)"
-        projectCard1.onmouseover = ()=> alert("inside")
+        projectCard1.onmouseover = ()=> projectCard1.style.width = "30rem" 
+        projectCard1.onmouseout = ()=> projectCard1.style.width = "25rem" 
 
     }
     // This function raises and shows the first web project 
@@ -66,6 +57,8 @@ const Websites = props => {
         projectCard2.style.opacity = "1"
         projectCard2.style.transition = "ease 1s"
         projectCard2.style.transform = "translate(0px, -400px)"
+        projectCard2.onmouseover = ()=> projectCard2.style.width = "30rem"
+        projectCard2.onmouseout = ()=> projectCard2.style.width = "25rem"
     }
     // This function raises and shows the first web project 
     function thirdProject(){
@@ -73,6 +66,8 @@ const Websites = props => {
         projectCard3.style.opacity = "1"
         projectCard3.style.transition = "ease 1s"
         projectCard3.style.transform = "translate(0px, -400px)"
+        projectCard3.onmouseover = ()=> projectCard3.style.width = "30rem"
+        projectCard3.onmouseout = ()=> projectCard3.style.width = "25rem"
     }
 
     return(
