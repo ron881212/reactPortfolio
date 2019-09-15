@@ -1,5 +1,4 @@
 import React, {useRef, useState} from 'react'
-// import textImg from '../../public/images/webAppImg02.png'
 import webProjects from './webProjects.json'
 import Card from '../../components/Card'
 import './styles.css'
@@ -7,20 +6,73 @@ import './styles.css'
 const Websites = props => {
 
     const hero = useRef(null)
+    const webCards = useRef(null)
     const [projects] = useState(webProjects)
     const styles = {
         cardRow: {
            display:'flex',
-           flexDirection: 'row' ,
            flexWrap: 'wrap',
+           flexDirection: 'row' ,
+           alignItems: 'flex-end',
            justifyContent: 'space-evenly',
-
+           alignContent: 'flex-end',
+           marginTop: '200px'
         }
     }
 
+    // This function grows projects on hover
+    // $(".projectCard").mouseover(function () {
+    //     $(this).css("transition", "ease 0s");
+    //     $(this).css("width", "28rem");
+    //     $(this).mouseout(function () {
+    //       $(this).css("width", "25rem")
+    //     })
+    //   })
+
+    // This function raises and hides the hero image
     function showProjects() {
+        hero.current.style.opacity = "0"
         hero.current.style.transition = "ease 1s"
         hero.current.style.transform = "translate(0px, -300px)"
+        showCards()
+    }
+    // This function lowers and show the hero image
+    // function hideProjects() {
+    //     hero.current.style.opacity = "1"
+    //     hero.current.style.transition = "ease 1s"
+    //     hero.current.style.transform = "translate(0px, 300px)"
+    //     hideCards()
+    // }
+
+    // This function causes animation effect
+    function showCards() {
+        setTimeout(firstProject, 300)
+        setTimeout(secondProject, 500)
+        setTimeout(thirdProject, 700)
+    }
+
+    // This function raises and shows the first web project 
+    function firstProject(){
+        const projectCard1 = webCards.current.childNodes[0]
+        projectCard1.style.opacity = "1"
+        projectCard1.style.transition = "ease 1s"
+        projectCard1.style.transform = "translate(0px, -400px)"
+        projectCard1.onmouseover = ()=> alert("inside")
+
+    }
+    // This function raises and shows the first web project 
+    function secondProject(){
+        const projectCard2 = webCards.current.childNodes[1]
+        projectCard2.style.opacity = "1"
+        projectCard2.style.transition = "ease 1s"
+        projectCard2.style.transform = "translate(0px, -400px)"
+    }
+    // This function raises and shows the first web project 
+    function thirdProject(){
+        const projectCard3 = webCards.current.childNodes[2]
+        projectCard3.style.opacity = "1"
+        projectCard3.style.transition = "ease 1s"
+        projectCard3.style.transform = "translate(0px, -400px)"
     }
 
     return(
@@ -30,13 +82,17 @@ const Websites = props => {
             <h2 className='jumbo-text text-center'>All Web Apps below are full stack</h2>
             <p className='text-center info-text'>Click Below to see Projects</p>
             <div className="d-flex justify-content-center">
-            <button onClick={showProjects} type="button" className="btn btn-primary btn-lg rounded-circle start-btn d-flex justify-content-center"><i className="fas fa-desktop fa-2x "></i></button>
+            <button onClick={showProjects} type="button" className="btn btn-primary btn-lg 
+            rounded-circle start-btn d-flex justify-content-center">
+                <i className="fas fa-desktop fa-2x "></i>
+            </button>
             </div>
         </div>
 
-        <div style={styles.cardRow}> 
-            {projects.map(card => (
+        <div ref={webCards} style={styles.cardRow}> 
+            {projects.map((card, index) => (
                 <Card 
+                key = { index }
                 name = {card.name}
                 picture = {card.picture}
                 />

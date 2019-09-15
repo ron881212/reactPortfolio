@@ -1,10 +1,10 @@
 .jumbo-text {
     font-family: 'Righteous', cursive;
-    font-size: 80px;
+    font-size: 5vw; /* 80px */
 }
 .info-text {
     font-family: 'Righteous', cursive;
-    font-size: 20px;
+    font-size: 2vw; /* 20px */
 }
 .bg-img {
     position: fixed;
@@ -15,5 +15,5 @@
     width: 75px;
 }
 .projectCard {
-    width: 22rem;
+    width: 25rem;
 }
