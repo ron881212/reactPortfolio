@@ -14,7 +14,18 @@
     height: 75px;
     width: 75px;
 }
+.dark-btn {
+    width: 45px;
+    height: 45px;
+    color: white;
+}
+.darkmode-text {
+    color: palevioletred;
+    font: bold;
+}
 .projectCard {
     width: 25rem;
-    /* 25rem */
+}
+.moon-btn {
+    background-color: palevioletred;
 }

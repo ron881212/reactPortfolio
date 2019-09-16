@@ -7,20 +7,31 @@ const Websites = props => {
 
     const hero = useRef(null)
     const webCards = useRef(null)
+    const darkMode = useRef(null)
+    const webCardText = useRef(null)
     const [projects] = useState(webProjects)
     const styles = {
         cardRow: {
            display: 'none',
            flexWrap: 'wrap',
-           marginTop: '200px',
-           flexDirection: 'row' ,
+        //    marginTop: '200px',
+           flexDirection: 'row',
            justifyContent: 'space-evenly',
+        },
+        darkMode: {
+           display: 'flex',
+           flexDirection: 'row',
+           alignItems: 'baseline'
+        },
+        projectText: {
+           visibility: 'hidden'
         }
     }
 
     // This function raises and hides the hero image
     function showProjects() {
         showCards()
+        projectText()
         hero.current.style.opacity = "0"
         webCards.current.style.display = "flex"
         hero.current.style.transition = "ease 1s"
@@ -34,11 +45,17 @@ const Websites = props => {
     //     hideCards()
     // }
 
-    // This function causes animation effect
+    // This function causes animation effect            
     function showCards() {
         setTimeout(firstProject, 300)
         setTimeout(secondProject, 500)
         setTimeout(thirdProject, 700)
+    }
+
+    function projectText() {
+        webCardText.current.style.visibility = "visible"
+        webCardText.current.style.transition = "ease 1.5s"
+        webCardText.current.style.transform = "translate(0px, -600px)"
     }
 
     // This function raises and shows the first web project 
@@ -46,7 +63,7 @@ const Websites = props => {
         const projectCard1 = webCards.current.childNodes[0]
         projectCard1.style.opacity = "1"
         projectCard1.style.transition = "ease 1s"
-        projectCard1.style.transform = "translate(0px, -400px)"
+        projectCard1.style.transform = "translate(0px, -450px)"
         projectCard1.onmouseover = ()=> projectCard1.style.width = "30rem" 
         projectCard1.onmouseout = ()=> projectCard1.style.width = "25rem" 
 
@@ -56,7 +73,7 @@ const Websites = props => {
         const projectCard2 = webCards.current.childNodes[1]
         projectCard2.style.opacity = "1"
         projectCard2.style.transition = "ease 1s"
-        projectCard2.style.transform = "translate(0px, -400px)"
+        projectCard2.style.transform = "translate(0px, -450px)"
         projectCard2.onmouseover = ()=> projectCard2.style.width = "30rem"
         projectCard2.onmouseout = ()=> projectCard2.style.width = "25rem"
     }
@@ -65,7 +82,7 @@ const Websites = props => {
         const projectCard3 = webCards.current.childNodes[2]
         projectCard3.style.opacity = "1"
         projectCard3.style.transition = "ease 1s"
-        projectCard3.style.transform = "translate(0px, -400px)"
+        projectCard3.style.transform = "translate(0px, -450px)"
         projectCard3.onmouseover = ()=> projectCard3.style.width = "30rem"
         projectCard3.onmouseout = ()=> projectCard3.style.width = "25rem"
     }
@@ -81,6 +98,18 @@ const Websites = props => {
             rounded-circle start-btn d-flex justify-content-center">
                 <i className="fas fa-desktop fa-2x "></i>
             </button>
+            </div>
+        </div>
+
+        <div ref={webCardText} style={styles.projectText} className="container">
+            <h2 className='jumbo-text'>Selected Projects</h2>
+            <p className='info-text'>Hover over cards to see a video of the project</p>
+            <div style={styles.darkMode}>
+            <button onClick={showProjects} type="button" className="moon-btn
+            rounded-circle dark-btn d-flex justify-content-center">
+                <i className="fas fa-moon"></i>
+            </button>
+            <p className='darkmode-text ml-3'>Enable dark mode</p>
             </div>
         </div>
 
