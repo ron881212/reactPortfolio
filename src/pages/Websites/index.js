@@ -1,20 +1,23 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, useEffect, useLayoutEffect} from 'react'
 import webProjects from './webProjects.json'
 import Card from '../../components/Card'
+import Nav from '../../components/Nav'
 import './styles.css'
 
 const Websites = props => {
 
     const hero = useRef(null)
     const webCards = useRef(null)
-    const darkMode = useRef(null)
     const webCardText = useRef(null)
     const [projects] = useState(webProjects)
+    const [darkMode, setDarkMode] = useState(false)
+
+    useLayoutEffect(()=> darkMode ? backgroundDark() : backgroundLight())
+
     const styles = {
         cardRow: {
            display: 'none',
            flexWrap: 'wrap',
-        //    marginTop: '200px',
            flexDirection: 'row',
            justifyContent: 'space-evenly',
         },
@@ -64,7 +67,7 @@ const Websites = props => {
         projectCard1.style.opacity = "1"
         projectCard1.style.transition = "ease 1s"
         projectCard1.style.transform = "translate(0px, -450px)"
-        projectCard1.onmouseover = ()=> projectCard1.style.width = "30rem" 
+        projectCard1.onmouseover = ()=> projectCard1.style.width = "35rem" 
         projectCard1.onmouseout = ()=> projectCard1.style.width = "25rem" 
 
     }
@@ -74,7 +77,7 @@ const Websites = props => {
         projectCard2.style.opacity = "1"
         projectCard2.style.transition = "ease 1s"
         projectCard2.style.transform = "translate(0px, -450px)"
-        projectCard2.onmouseover = ()=> projectCard2.style.width = "30rem"
+        projectCard2.onmouseover = ()=> projectCard2.style.width = "35rem"
         projectCard2.onmouseout = ()=> projectCard2.style.width = "25rem"
     }
     // This function raises and shows the first web project 
@@ -83,12 +86,37 @@ const Websites = props => {
         projectCard3.style.opacity = "1"
         projectCard3.style.transition = "ease 1s"
         projectCard3.style.transform = "translate(0px, -450px)"
-        projectCard3.onmouseover = ()=> projectCard3.style.width = "30rem"
+        projectCard3.onmouseover = ()=> projectCard3.style.width = "35rem"
         projectCard3.onmouseout = ()=> projectCard3.style.width = "25rem"
     }
 
+    function backgroundDark(){  
+        const projectCard1 = webCards.current.childNodes[0]
+        const projectCard2 = webCards.current.childNodes[1]
+        const projectCard3 = webCards.current.childNodes[2]
+        document.body.style.backgroundColor = "black"
+        projectCard1.style.backgroundColor = "black"
+        projectCard2.style.backgroundColor = "black"
+        projectCard3.style.backgroundColor = "black"
+    }
+    function backgroundLight(){
+        const projectCard1 = webCards.current.childNodes[0]
+        const projectCard2 = webCards.current.childNodes[1]
+        const projectCard3 = webCards.current.childNodes[2]
+        document.body.style.backgroundColor = "white"
+        projectCard1.style.backgroundColor = "white"
+        projectCard2.style.backgroundColor = "white"
+        projectCard3.style.backgroundColor = "white"
+    }
+
+    function enableDarkMode(){
+        setDarkMode(!darkMode)
+    }
     return(
         <>
+        <Nav 
+        bgcolor = {darkMode}
+        />
         <div ref={hero} className="container">
             <img src="/images/webAppImg02.png" alt='code' className="img-fluid"/>
             <h2 className='jumbo-text text-center'>All Web Apps below are full stack</h2>
@@ -105,11 +133,11 @@ const Websites = props => {
             <h2 className='jumbo-text'>Selected Projects</h2>
             <p className='info-text'>Hover over cards to see a video of the project</p>
             <div style={styles.darkMode}>
-            <button onClick={showProjects} type="button" className="moon-btn
+            <button onClick={enableDarkMode} style={{position: 'relative'}} type="button" className="moon-btn
             rounded-circle dark-btn d-flex justify-content-center">
                 <i className="fas fa-moon"></i>
             </button>
-            <p className='darkmode-text ml-3'>Enable dark mode</p>
+            <p className='darkmode-text ml-3'>{darkMode ? 'Enable light mode' : 'Enable dark mode'}</p>
             </div>
         </div>
 
