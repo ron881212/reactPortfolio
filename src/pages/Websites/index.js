@@ -1,10 +1,11 @@
-import React, {useRef, useState, useEffect, useLayoutEffect} from 'react'
+import React, {useRef, useState, useLayoutEffect} from 'react'
 import webProjects from './webProjects.json'
 import Card from '../../components/Card'
 import Nav from '../../components/Nav'
 import './styles.css'
+import VideoTron from '../../components/Video'
 
-const Websites = props => {
+const Websites = () => {
 
     const hero = useRef(null)
     const webCards = useRef(null)
@@ -40,14 +41,7 @@ const Websites = props => {
         hero.current.style.transition = "ease 1s"
         hero.current.style.transform = "translate(0px, -300px)"
     }
-    // This function lowers and show the hero image
-    // function hideProjects() {
-    //     hero.current.style.opacity = "1"
-    //     hero.current.style.transition = "ease 1s"
-    //     hero.current.style.transform = "translate(0px, 300px)"
-    //     hideCards()
-    // }
-
+    
     // This function causes animation effect            
     function showCards() {
         setTimeout(firstProject, 300)
@@ -131,16 +125,21 @@ const Websites = props => {
 
         <div ref={webCardText} style={styles.projectText} className="container">
             <h2 className='jumbo-text'>Selected Projects</h2>
-            <p className='info-text'>Hover over cards to see a video of the project</p>
+            <p className='info-text'>Click on cards to see a video of the project</p>
             <div style={styles.darkMode}>
             <button onClick={enableDarkMode} style={{position: 'relative'}} type="button" className="moon-btn
             rounded-circle dark-btn d-flex justify-content-center">
-                <i className="fas fa-moon"></i>
+                <i className={ darkMode ? 'fas fa-sun' : 'fas fa-moon' }></i>
             </button>
             <p className='darkmode-text ml-3'>{darkMode ? 'Enable light mode' : 'Enable dark mode'}</p>
             </div>
         </div>
 
+        {/* 
+            OnClick on the card should also turn off all effects on cards and should replace 
+            it with an border on the active card and a gradiant to see text and buttons for 
+            github and the actual site. 
+        */}
         <div ref={webCards} style={styles.cardRow}> 
             {projects.map((card, index) => (
                 <Card 
@@ -149,7 +148,16 @@ const Websites = props => {
                 picture = {card.picture}
                 />
             ))}
-        </div> 
+        </div>
+
+        {/* 
+            Here the src of the video is preview={video.clip} use this for on click 
+            Use onClick to play() this video 
+            This must be inside the card to work !!!!!!!!
+        */}
+
+        {darkMode ? <VideoTron /> : null}
+
         </>
     )
 }

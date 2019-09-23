@@ -1,17 +1,20 @@
 [
     {
         "name":"NBA Search",
-        "picture": "/images/webApps/nbaSearch.png",
-        "refName": "nba"
+        "picture": "./images/webApps/nbaSearch.png",
+        "refName": "nba",
+        "clip": "./NBAPreview01"
     },
     {
         "name":"My Funko",
         "picture": "./images/webApps/myFunko.png",
-        "refName": "funko"
+        "refName": "funko",
+        "clip": "./MyFunkoPreview01"
     },
     {
         "name":"Winc Stories",
         "picture": "./images/webApps/wincStories.png",
-        "refName": "winc"
+        "refName": "winc",
+        "clip": "./WincPreview01"
     }
 ]
