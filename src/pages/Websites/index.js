@@ -10,9 +10,11 @@ const Websites = () => {
     const hero = useRef(null)
     const webCards = useRef(null)
     const webCardText = useRef(null)
+    const sampleWebsite = useRef(null)
     const [projects] = useState(webProjects)
-    const [videoPath, setVideoPath] = useState()
+    const [videoPath, setVideoPath] = useState(null)
     const [darkMode, setDarkMode] = useState(false)
+    const [previews, setPreviews] = useState(false)
     
     useLayoutEffect(()=> darkMode ? backgroundDark() : backgroundLight())
 
@@ -62,9 +64,9 @@ const Websites = () => {
         projectCard1.style.opacity = "1"
         projectCard1.style.transition = "ease 1s"
         projectCard1.style.transform = "translate(0px, -450px)"
-        projectCard1.onmouseover = ()=> projectCard1.style.width = "35rem" 
+        projectCard1.onmouseover = ()=> projectCard1.style.width = "35rem"
         projectCard1.onmouseout = ()=> projectCard1.style.width = "25rem" 
-
+    
     }
     // This function raises and shows the first web project 
     function secondProject(){
@@ -103,12 +105,18 @@ const Websites = () => {
         projectCard2.style.backgroundColor = "white"
         projectCard3.style.backgroundColor = "white"
     }
-
     function enableDarkMode(){
         setDarkMode(!darkMode)
     }
+    function autoScroll() {
+        const scrollToRef = (ref) => window.scrollTo({top:ref.current.offsetTop / 1.5, left:0, behavior: 'smooth'})
+        scrollToRef(webCards) 
+    }
     function setNewVideo(newVideo){
+        setPreviews(true)
         setVideoPath(newVideo)
+        setTimeout(autoScroll, 300) 
+        setTimeout(()=>sampleWebsite.current.play(), 500) 
     }
     return(
         <>
@@ -144,6 +152,7 @@ const Websites = () => {
             it with an border on the active card and a gradiant to see text and buttons for 
             github and the actual site. 
         */}
+
         <div ref={webCards} style={styles.cardRow}> 
             {projects.map((card, index) => (
                 <Card 
@@ -155,13 +164,12 @@ const Websites = () => {
             ))}
         </div>
 
-        {/* 
-            Here the src of the video is preview={video.clip} use this for on click 
-            Use onClick to play() this video 
-            This must be inside the card (or map function) to work !!!!!!!!
-        */}
-
-        {darkMode ? <VideoTron preview = {videoPath}/> : null}
+            {previews ? 
+            <VideoTron 
+            myRef={sampleWebsite}
+            preview = {videoPath}
+            
+            /> : null}
 
         </>
     )
