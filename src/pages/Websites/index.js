@@ -2,8 +2,8 @@ import React, {useRef, useState, useLayoutEffect} from 'react'
 import webProjects from './webProjects.json'
 import Card from '../../components/Card'
 import Nav from '../../components/Nav'
-import './styles.css'
 import VideoTron from '../../components/Video'
+import './styles.css'
 
 const Websites = () => {
 
@@ -11,8 +11,9 @@ const Websites = () => {
     const webCards = useRef(null)
     const webCardText = useRef(null)
     const [projects] = useState(webProjects)
+    const [videoPath, setVideoPath] = useState()
     const [darkMode, setDarkMode] = useState(false)
-
+    
     useLayoutEffect(()=> darkMode ? backgroundDark() : backgroundLight())
 
     const styles = {
@@ -106,6 +107,9 @@ const Websites = () => {
     function enableDarkMode(){
         setDarkMode(!darkMode)
     }
+    function setNewVideo(newVideo){
+        setVideoPath(newVideo)
+    }
     return(
         <>
         <Nav 
@@ -146,6 +150,7 @@ const Websites = () => {
                 key = { index }
                 name = {card.name}
                 picture = {card.picture}
+                clips = {()=> setNewVideo(card.clip)}
                 />
             ))}
         </div>
@@ -153,10 +158,10 @@ const Websites = () => {
         {/* 
             Here the src of the video is preview={video.clip} use this for on click 
             Use onClick to play() this video 
-            This must be inside the card to work !!!!!!!!
+            This must be inside the card (or map function) to work !!!!!!!!
         */}
 
-        {darkMode ? <VideoTron /> : null}
+        {darkMode ? <VideoTron preview = {videoPath}/> : null}
 
         </>
     )
