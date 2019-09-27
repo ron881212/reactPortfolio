@@ -1,3 +1,27 @@
-.myGradient {
-    background: linear-gradient(to right, red , yellow)
+.videoContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: -450px;
+    background-attachment: scroll;
+    overflow: hidden;
+    max-width: 100%;
+}       
+.videoContainer video {
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    z-index: 1;
+}
+.videoContainer .myGradient {
+    height: 100%;
+    /* width: 100%; */
+    width: 60%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    /* opacity: 0.5; */
+    background: linear-gradient(to right, black , rgba(255, 255, 0, 0));
+    /* background: black; */
 }

@@ -4,10 +4,11 @@ import './styling.css'
 const VideoTron = props => {  
 
     return (
-        <div className="myGradient">
+        <div className="videoContainer">
+        <div className="myGradient"></div>
         <video 
         src={props.preview} 
-        style={{width:"100%", marginTop:"-450px"}}
+        style={{maxWidth:"100%"}}
         ref={props.myRef}
         loop 
         >
