@@ -8,20 +8,36 @@
     max-width: 100%;
 }       
 .videoContainer video {
-    min-width: 100%;
-    min-height: 100%;
+    /* min-width: 100%;
+    min-height: 100%; */
     position: relative;
     z-index: 1;
 }
 .videoContainer .myGradient {
     height: 100%;
     /* width: 100%; */
-    width: 60%;
+    width: 15%;
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 30%;
     z-index: 2;
     /* opacity: 0.5; */
     background: linear-gradient(to right, black , rgba(255, 255, 0, 0));
     /* background: black; */
 }
+.banner {
+    height: 100%;
+    width: 30%;
+    top: 0px;
+    left: 0px;
+    background-color: black; 
+    position: absolute;
+    z-index: 3;
+
+}
+video {
+    width: 70%;
+    min-width: 70%;
+    left: 30%;
+}
+/* videoContainer width is 100% */

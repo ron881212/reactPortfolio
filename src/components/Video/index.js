@@ -5,10 +5,11 @@ const VideoTron = props => {
 
     return (
         <div className="videoContainer">
+        <div className="banner"></div>
         <div className="myGradient"></div>
         <video 
         src={props.preview} 
-        style={{maxWidth:"100%"}}
+        style={{maxWidth:"100%", width:"70%"}}
         ref={props.myRef}
         loop 
         >
