@@ -13,6 +13,8 @@ const Websites = () => {
     const sampleWebsite = useRef(null)
     const [projects] = useState(webProjects)
     const [videoPath, setVideoPath] = useState(null)
+    const [videoTitle, setVideoTitle] = useState(null)
+    const [feature, setFeature] = useState(null)
     const [darkMode, setDarkMode] = useState(false)
     const [previews, setPreviews] = useState(false)
     
@@ -112,9 +114,11 @@ const Websites = () => {
         const scrollToRef = (ref) => window.scrollTo({top:ref.current.offsetTop / 1.5, left:0, behavior: 'smooth'})
         scrollToRef(webCards) 
     }
-    function setNewVideo(newVideo){
+    function setNewVideo(newVideo, newFeature, newVideoTitle){
         setPreviews(true)
+        setFeature(newFeature)
         setVideoPath(newVideo)
+        setVideoTitle(newVideoTitle)
         setTimeout(autoScroll, 300) 
         setTimeout(()=>sampleWebsite.current.play(), 500) 
     }
@@ -159,15 +163,20 @@ const Websites = () => {
                 key = { index }
                 name = {card.name}
                 picture = {card.picture}
-                clips = {()=> setNewVideo(card.clip)}
+                clips = {
+                    ()=> setNewVideo(card.clip, card.features, card.name)
+                }
                 />
             ))}
         </div>
 
-            {previews ? 
+            { previews ? 
+
             <VideoTron 
-            myRef={sampleWebsite}
+            name = {videoTitle}
+            myRef = {sampleWebsite}
             preview = {videoPath}
+            tech = {feature.map((feat, index) => <li key={index}>{feat}</li>)}
             
             /> : null}
 
