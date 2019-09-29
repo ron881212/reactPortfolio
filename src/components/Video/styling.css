@@ -55,3 +55,7 @@ video {
     color: var(--video-overly-text);
     z-index: 5;
 }
+.visitProject {
+    display: flex;
+    
+}

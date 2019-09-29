@@ -5,14 +5,18 @@
         "refName": "nba",
         "clip": "./videos/NBAPreview01.mov",
         "features":[
-            "mysql",
-            "express",
-            "passport",
-            "node",
-            "path",
-            "jQuery-ui",
-            "travis for continuous integration"
-        ]
+            "HTML5",
+            "CSS3",
+            "Bootstrap",
+            "JavaScript",
+            "jQuery",
+            "Firebase",
+            "Ticketmaster API",
+            "News API",
+            "tinyAgo.js"
+        ],
+        "visit": "https://samtaub.github.io/Project-1/",
+        "viewCode":"https://github.com/SamTaub/Project-1"
     },
     {
         "name":"My Funko Pop",
@@ -27,7 +31,9 @@
             "path",
             "jQuery-ui",
             "travis for continuous integration"
-        ]
+        ],
+        "visit": "https://funky-funkos.herokuapp.com/",
+        "viewCode":"https://github.com/troynwynn/MyFunkoPop"
     },
     {
         "name":"Winc Stories",
@@ -35,13 +41,16 @@
         "refName": "winc",
         "clip": "./videos/WincPreview01.mov",
         "features":[
-            "mysql",
-            "express",
-            "passport",
-            "node",
-            "path",
-            "jQuery-ui",
-            "travis for continuous integration"
-        ]
+            "Javascript/ES6",
+            "HTML/CSS",
+            "React",
+            "Node/Express",
+            "MySQL",
+            "Sequelize ORM",
+            "bcrypt and jwt",
+            "ReactSpring.js for animation"
+        ],
+        "visit": "https://www.wincstories.com/",
+        "viewCode":"https://github.com/AKluger/Project-Three"
     }
 ]

@@ -14,6 +14,8 @@ const Websites = () => {
     const [projects] = useState(webProjects)
     const [videoPath, setVideoPath] = useState(null)
     const [videoTitle, setVideoTitle] = useState(null)
+    const [visit, setVisit] = useState(null)
+    const [viewCode, setViewCode] = useState(null)
     const [feature, setFeature] = useState(null)
     const [darkMode, setDarkMode] = useState(false)
     const [previews, setPreviews] = useState(false)
@@ -114,8 +116,10 @@ const Websites = () => {
         const scrollToRef = (ref) => window.scrollTo({top:ref.current.offsetTop / 1.5, left:0, behavior: 'smooth'})
         scrollToRef(webCards) 
     }
-    function setNewVideo(newVideo, newFeature, newVideoTitle){
+    function setNewVideo(newVideo, newFeature, newVideoTitle, newVisit, newViewCode){
         setPreviews(true)
+        setVisit(newVisit)
+        setViewCode(newViewCode)
         setFeature(newFeature)
         setVideoPath(newVideo)
         setVideoTitle(newVideoTitle)
@@ -127,7 +131,8 @@ const Websites = () => {
         <Nav 
         bgcolor = {darkMode}
         />
-        <div ref={hero} className="container">
+        {/* <div className="jumbotron jumbotron-fluid mb-0"> */}
+        <div ref={hero} className="container pt-5">
             <img src="/images/webAppImg02.png" alt='code' className="img-fluid"/>
             <h2 className='jumbo-text text-center'>All Web Apps below are full stack</h2>
             <p className='text-center info-text'>Click Below to see Projects</p>
@@ -138,8 +143,9 @@ const Websites = () => {
             </button>
             </div>
         </div>
+        {/* </div> */}
 
-        <div ref={webCardText} style={styles.projectText} className="container">
+        <div ref={webCardText} style={styles.projectText} className="container pt-5">
             <h2 className='jumbo-text'>Selected Projects</h2>
             <p className='info-text'>Click on cards to see a video of the project</p>
             <div style={styles.darkMode}>
@@ -164,7 +170,7 @@ const Websites = () => {
                 name = {card.name}
                 picture = {card.picture}
                 clips = {
-                    ()=> setNewVideo(card.clip, card.features, card.name)
+                    ()=> setNewVideo(card.clip, card.features, card.name, card.visit, card.viewCode)
                 }
                 />
             ))}
@@ -173,11 +179,20 @@ const Websites = () => {
             { previews ? 
 
             <VideoTron 
-            name = {videoTitle}
-            myRef = {sampleWebsite}
-            preview = {videoPath}
-            tech = {feature.map((feat, index) => <li key={index}>{feat}</li>)}
-            
+                name = {videoTitle}
+                myRef = {sampleWebsite}
+                preview = {videoPath}
+                tech = {feature.map((feat, index) => <li key={index} style={{fontSize:"2vw"}}>{feat}</li>)}
+                buttons = {
+                    <>
+                    <a href={visit} target="_blank" role="button" className="btn btn-primary btn-lg mx-2" style={{fontSize:"1vw"}}>
+                        <i className="fas fa-search"></i> Visit Site
+                    </a>
+                    <a href={viewCode} target="_blank" role="button" className="btn btn-secondary btn-lg mx-2" style={{fontSize:"1vw"}}>
+                        <i className="fas fa-laptop-code"></i> View Code
+                    </a>
+                    </>
+                }
             /> : null}
 
         </>
