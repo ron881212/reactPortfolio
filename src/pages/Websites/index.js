@@ -185,10 +185,10 @@ const Websites = () => {
                 tech = {feature.map((feat, index) => <li key={index} style={{fontSize:"2vw"}}>{feat}</li>)}
                 buttons = {
                     <>
-                    <a href={visit} target="_blank" role="button" className="btn btn-primary btn-lg mx-2" style={{fontSize:"1vw"}}>
+                    <a href={visit} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-primary btn-lg mx-2" style={{fontSize:"1vw"}}>
                         <i className="fas fa-search"></i> Visit Site
                     </a>
-                    <a href={viewCode} target="_blank" role="button" className="btn btn-secondary btn-lg mx-2" style={{fontSize:"1vw"}}>
+                    <a href={viewCode} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-secondary btn-lg mx-2" style={{fontSize:"1vw"}}>
                         <i className="fas fa-laptop-code"></i> View Code
                     </a>
                     </>
