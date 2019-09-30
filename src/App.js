@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, HashRouter } from "react-router-dom";
 import Websites from './pages/Websites'
 import PhoneApps from './pages/PhoneApps'
 import About from './pages/About'
@@ -8,7 +8,7 @@ import Nav from './components/Nav'
 
 function App() {
   return (
-    <Router>
+    <HashRouter basename='/reactPortfolio'>
       <div>
         <Nav />
         <Switch>
@@ -18,7 +18,7 @@ function App() {
           <Route exact path="/Contact" component={Contact} />
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
