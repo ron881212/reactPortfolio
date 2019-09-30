@@ -12,7 +12,7 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/reactPortfolio" component={Websites} />
+          <Route exact path="/" component={Websites} />
           <Route exact path="/PhoneApps" component={PhoneApps} />
           <Route exact path="/About" component={About} />
           <Route exact path="/Contact" component={Contact} />
