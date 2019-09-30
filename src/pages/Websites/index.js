@@ -3,7 +3,13 @@ import webProjects from './webProjects.json'
 import Card from '../../components/Card'
 import Nav from '../../components/Nav'
 import VideoTron from '../../components/Video'
+import WebAppImg from '../../../public/images/webAppImg02.png'
 import './styles.css'
+// add homepage img as import to get it to work
+// fix padding for responsiveness
+// crop github img for aboutMe page
+// use flip cards for contactMe page
+// create css iphone for app video container
 
 const Websites = () => {
 
@@ -133,7 +139,7 @@ const Websites = () => {
         />
         {/* <div className="jumbotron jumbotron-fluid mb-0"> */}
         <div ref={hero} className="container pt-5">
-            <img src="/images/webAppImg02.png" alt='code' className="img-fluid"/>
+            <img src={WebAppImg} alt='code' className="img-fluid"/>
             <h2 className='jumbo-text text-center'>All Web Apps below are full stack</h2>
             <p className='text-center info-text'>Click Below to see Projects</p>
             <div className="d-flex justify-content-center">
