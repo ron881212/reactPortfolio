@@ -75,7 +75,6 @@ const Websites = () => {
         projectCard1.style.transform = "translate(0px, -450px)"
         projectCard1.onmouseover = ()=> projectCard1.style.width = "35rem"
         projectCard1.onmouseout = ()=> projectCard1.style.width = "25rem" 
-    
     }
     // This function raises and shows the first web project 
     function secondProject(){

@@ -1,7 +1,31 @@
-.jumbo-text-phone {
+.jumbo-text {
     font-family: 'Righteous', cursive;
-    font-size: 180px;
+    font-size: 4vw; /* 80px */
 }
-.jumbotron {
-    height: 600px;
+.info-text {
+    font-family: 'Righteous', cursive;
+    font-size: 2vw; /* 20px */
+}
+.bg-img {
+    position: fixed;
+    height: 300px;
+}
+.start-btn {
+    height: 75px;
+    width: 75px;
+}
+.dark-btn {
+    width: 45px;
+    height: 45px;
+    color: white;
+}
+.darkmode-text {
+    color: palevioletred;
+    font: bold;
+}
+.projectCard {
+    width: 25rem;
+}
+.moon-btn {
+    background-color: palevioletred;
 }
