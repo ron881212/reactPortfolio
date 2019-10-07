@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import profile from './images/profilePic01.png'
 
 const About = () => {
+    const infoCards = useRef(null)
 
+    // useEffect(()=> infoCards.current.style.display = "none")
+
+    // function cardimation() {
+        // cards will display none and this function will show them
+        // it will us transition and transform
+        // maybe change the body color to jumbotron color
+    // }
 
     return(
         <>
-        <div className="jumbotron jumbotron-fluid text-center" style={{backgroundColor:'#102f41'}}>
-            <img src={profile} alt='code' style={{width:'300px'}} className="img-fluid align-self-center"/>        
+        <div className="jumbotron jumbotron-fluid text-center pb-5" style={{backgroundColor:'#102f41'}}>
+            <img src={profile} alt='code' style={{width:'300px'}} className="img-fluid pt-5"/>        
         </div>
         
-        <div className="container">
+        <div className="container" ref={infoCards}>
         <div className="cards row">
             <div className="col-md-6">
                 <div className="card text-white mb-3 mx-auto" style={{backgroundColor:'#f0b042'}}>
@@ -25,7 +33,7 @@ const About = () => {
                 </div>
             </div>
             <div className="col-md-6">
-                <div className="card text-white mb-3 mx-auto" style={{backgroundColor:'#ea5642'}}>
+                <div className="card text-white mb-3 mx-auto" style={{backgroundColor:'#ea5642',minHeight:'235px'}}>
                     <div className="card-header text-center">Coder <i className="fas fa-laptop"></i></div>
                     <div className="card-body">
                         <p className="card-text text-center">
@@ -51,7 +59,7 @@ const About = () => {
                 </div>
             </div>
             <div className="col-md-6">
-                <div className="card text-white mb-3 mx-3 mx-auto" style={{backgroundColor:'#112F41'}}>
+                <div className="card text-white mb-3 mx-3 mx-auto" style={{backgroundColor:'#112F41',minHeight:'185px'}}>
                     <div className="card-header text-center">Goals <i className="fas fa-flag-checkered"></i></div>
                     <div className="card-body">
                         <p className="card-text text-center">

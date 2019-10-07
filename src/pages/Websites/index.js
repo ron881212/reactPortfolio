@@ -3,7 +3,7 @@ import webProjects from './webProjects.json'
 import Card from '../../components/Card'
 import Nav from '../../components/Nav'
 import VideoTron from '../../components/Video'
-import webAppImg from './images/webAppImg02.png'
+// import webAppImg from './images/webAppImg02.png'
 import './styles.css'
 // add homepage img as import to get it to work
 // fix padding for responsiveness
@@ -54,20 +54,17 @@ const Websites = () => {
         hero.current.style.transition = "ease 1s"
         hero.current.style.transform = "translate(0px, -300px)"
     }
-    
     // This function causes animation effect            
     function showCards() {
         setTimeout(firstProject, 300)
         setTimeout(secondProject, 500)
         setTimeout(thirdProject, 700)
     }
-
     function projectText() {
         webCardText.current.style.visibility = "visible"
         webCardText.current.style.transition = "ease 1.5s"
         webCardText.current.style.transform = "translate(0px, -600px)"
     }
-
     // This function raises and shows the first web project 
     function firstProject(){
         const projectCard1 = webCards.current.childNodes[0]
@@ -95,7 +92,6 @@ const Websites = () => {
         projectCard3.onmouseover = ()=> projectCard3.style.width = "35rem"
         projectCard3.onmouseout = ()=> projectCard3.style.width = "25rem"
     }
-
     function backgroundDark(){  
         const projectCard1 = webCards.current.childNodes[0]
         const projectCard2 = webCards.current.childNodes[1]
@@ -138,7 +134,7 @@ const Websites = () => {
         />
         {/* <div className="jumbotron jumbotron-fluid mb-0"> */}
         <div ref={hero} className="container pt-5">
-            <img src={webAppImg} alt='code' className="img-fluid"/>
+            <img src={require('./images/webAppImg02.png')} alt='code' className="img-fluid"/>
             <h2 className='jumbo-text text-center'>All Web Apps below are full stack</h2>
             <p className='text-center info-text'>Click Below to see Projects</p>
             <div className="d-flex justify-content-center">
