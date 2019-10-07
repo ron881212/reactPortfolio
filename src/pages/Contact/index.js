@@ -1,15 +1,22 @@
 import React from 'react'
+import Nav from '../../components/Nav'
+import contactImg from './images/contactMe05.png'
 
 const Contact = () => {
 
 
     return(
-        <div className="jumbotron jumbotron-fluid">
-            <div className="container">
-              <p className="main-text jumbo-text-phone d-flex justify-content-center">Contact Me</p>
-              <p className="lead d-flex justify-content-center">Text info will be here</p>
+        <>
+        <Nav />
+        <div className="container pt-5">
+            <img src={contactImg} alt='code' className="img-fluid"/>
+            <div className="d-flex justify-content-center">
+
+            {/* contact cards go here */}
+            
             </div>
         </div>
+        </>
     )
 }
 

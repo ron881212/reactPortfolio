@@ -20,7 +20,7 @@ const PhoneApps = () => {
   const [darkMode, setDarkMode] = useState(false)
   const [previews, setPreviews] = useState(false)
 
-  // useLayoutEffect(()=> darkMode ? backgroundDark() : backgroundLight())
+  useLayoutEffect(()=> darkMode ? backgroundDark() : backgroundLight())
 
   const styles = {
       cardRow: {
@@ -57,6 +57,30 @@ const PhoneApps = () => {
     phoneCardText.current.style.transition = "ease 1.5s"
     phoneCardText.current.style.transform = "translate(0px, -600px)"
   }
+  function firstProject(){
+    const projectCard1 = phoneCards.current.childNodes[0]
+    projectCard1.style.opacity = "1"
+    projectCard1.style.transition = "ease 1s"
+    projectCard1.style.transform = "translate(0px, -450px)"
+    projectCard1.onmouseover = ()=> projectCard1.style.width = "35rem"
+    projectCard1.onmouseout = ()=> projectCard1.style.width = "25rem" 
+}
+function secondProject(){
+    const projectCard2 = phoneCards.current.childNodes[1]
+    projectCard2.style.opacity = "1"
+    projectCard2.style.transition = "ease 1s"
+    projectCard2.style.transform = "translate(0px, -450px)"
+    projectCard2.onmouseover = ()=> projectCard2.style.width = "35rem"
+    projectCard2.onmouseout = ()=> projectCard2.style.width = "25rem"
+} 
+function thirdProject(){
+    const projectCard3 = phoneCards.current.childNodes[2]
+    projectCard3.style.opacity = "1"
+    projectCard3.style.transition = "ease 1s"
+    projectCard3.style.transform = "translate(0px, -450px)"
+    projectCard3.onmouseover = ()=> projectCard3.style.width = "35rem"
+    projectCard3.onmouseout = ()=> projectCard3.style.width = "25rem"
+}
   function backgroundDark(){  
       const projectCard1 = phoneCards.current.childNodes[0]
       const projectCard2 = phoneCards.current.childNodes[1]
@@ -82,15 +106,28 @@ const PhoneApps = () => {
     const scrollToRef = (ref) => window.scrollTo({top:ref.current.offsetTop / 1.5, left:0, behavior: 'smooth'})
     scrollToRef(phoneCards) 
   }
+  function setNewVideo(newVideo, newFeature, newVideoTitle, newVisit, newViewCode){
+    setPreviews(true)
+    setVisit(newVisit)
+    setViewCode(newViewCode)
+    setFeature(newFeature)
+    setVideoPath(newVideo)
+    setVideoTitle(newVideoTitle)
+    setTimeout(autoScroll, 300) 
+    setTimeout(()=>sampleWebsite.current.play(), 500) 
+}
 
 return(
   <>
+    <Nav 
+    bgcolor = {darkMode}
+    />
     <div ref={hero} className="container pt-5">
       <img src="./images/phoneApps/PhoneApps.png" alt='code' className="img-fluid"/>
       <h2 className='jumbo-text text-center'>All Phone Apps below are full stack</h2>
       <p className='text-center info-text'>Click Below to see Projects</p>
       <div className="d-flex justify-content-center">
-      <button onClick={null} type="button" className="btn btn-primary btn-lg 
+      <button onClick={showProjects} type="button" className="btn btn-primary btn-lg 
       rounded-circle start-btn d-flex justify-content-center">
         <i className="fas fa-desktop fa-2x "></i>
       </button>

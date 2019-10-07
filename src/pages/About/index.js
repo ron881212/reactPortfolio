@@ -1,14 +1,12 @@
 import React from 'react'
+import profile from './images/profilePic01.png'
 
 const About = () => {
 
 
     return(
-        <div className="jumbotron jumbotron-fluid">
-            <div className="container">
-              <p className="main-text jumbo-text-phone d-flex justify-content-center">About Me</p>
-              <p className="lead d-flex justify-content-center">Text info will be here</p>
-            </div>
+        <div className="jumbotron jumbotron-fluid d-flex justify-content-center" style={{backgroundColor:'white'}}>
+            <img src={profile} alt='code' style={{width:'300px'}} className="img-fluid"/>            
         </div>
     )
 }
