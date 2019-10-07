@@ -10,12 +10,14 @@ const Contact = () => {
         <Nav />
         <div className="container pt-5">
             <img src={contactImg} alt='code' className="img-fluid"/>
-            <div className="d-flex justify-content-center">
+            {/* <div className="d-flex justify-content-center"> */}
 
             {/* contact cards go here */}
-            
-            </div>
+
+            {/* </div> */}
         </div>
+        
+        
         </>
     )
 }

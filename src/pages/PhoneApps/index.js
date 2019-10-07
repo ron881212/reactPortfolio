@@ -124,7 +124,7 @@ return(
     />
     <div ref={hero} className="container pt-5">
       <img src="./images/phoneApps/PhoneApps.png" alt='code' className="img-fluid"/>
-      <h2 className='jumbo-text text-center'>All Phone Apps below are full stack</h2>
+      <h2 className='jumbo-text text-center'>All Phone Apps are build with React Native</h2>
       <p className='text-center info-text'>Click Below to see Projects</p>
       <div className="d-flex justify-content-center">
       <button onClick={showProjects} type="button" className="btn btn-primary btn-lg 
