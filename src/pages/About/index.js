@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import profile from './images/profilePic01.png'
+import Nav from '../../components/Nav'
 
 const About = () => {
     const infoCards = useRef(null)
@@ -14,6 +15,8 @@ const About = () => {
 
     return(
         <>
+        <Nav />
+        
         <div className="jumbotron jumbotron-fluid text-center pb-5" style={{backgroundColor:'#102f41'}}>
             <img src={profile} alt='code' style={{width:'300px'}} className="img-fluid pt-5"/>        
         </div>
@@ -33,7 +36,7 @@ const About = () => {
                 </div>
             </div>
             <div className="col-md-6">
-                <div className="card text-white mb-3 mx-auto" style={{backgroundColor:'#ea5642',minHeight:'235px'}}>
+                <div className="card text-white mb-3 mx-auto" style={{backgroundColor:'#ea5642',minHeight:'210px'}}>
                     <div className="card-header text-center">Coder <i className="fas fa-laptop"></i></div>
                     <div className="card-body">
                         <p className="card-text text-center">
@@ -59,7 +62,7 @@ const About = () => {
                 </div>
             </div>
             <div className="col-md-6">
-                <div className="card text-white mb-3 mx-3 mx-auto" style={{backgroundColor:'#112F41',minHeight:'185px'}}>
+                <div className="card text-white mb-3 mx-3 mx-auto" style={{backgroundColor:'#112F41',minHeight:'165px'}}>
                     <div className="card-header text-center">Goals <i className="fas fa-flag-checkered"></i></div>
                     <div className="card-body">
                         <p className="card-text text-center">

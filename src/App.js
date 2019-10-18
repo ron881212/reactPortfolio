@@ -10,7 +10,7 @@ function App() {
   return (
     <HashRouter basename='/reactPortfolio'>
       <div>
-        <Nav />
+        {/* <Nav /> */}
         <Switch>
           <Route exact path="/" component={Websites} />
           <Route exact path="/PhoneApps" component={PhoneApps} />
