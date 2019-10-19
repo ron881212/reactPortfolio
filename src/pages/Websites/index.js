@@ -3,13 +3,7 @@ import webProjects from './webProjects.json'
 import Card from '../../components/Card'
 import Nav from '../../components/Nav'
 import VideoTron from '../../components/Video'
-// import webAppImg from './images/webAppImg02.png'
 import './styles.css'
-// add homepage img as import to get it to work
-// fix padding for responsiveness
-// crop github img for aboutMe page
-// use flip cards for contactMe page
-// create css iphone for app video container
 
 const Websites = () => {
 
@@ -32,6 +26,7 @@ const Websites = () => {
         cardRow: {
            display: 'none',
            flexWrap: 'wrap',
+           marginTop: '300px',
            flexDirection: 'row',
            justifyContent: 'space-evenly',
         },
@@ -41,7 +36,9 @@ const Websites = () => {
            alignItems: 'baseline'
         },
         projectText: {
-           visibility: 'hidden'
+            marginTop: '140px',
+            opacity: '0',
+            transform: 'translate(0px, 100px)'
         }
     }
 
@@ -52,46 +49,55 @@ const Websites = () => {
         hero.current.style.opacity = "0"
         webCards.current.style.display = "flex"
         hero.current.style.transition = "ease 1s"
-        hero.current.style.transform = "translate(0px, -300px)"
-        // setTimeout(()=> hero.current.style.display = "none", 1000)
+        hero.current.style.transform = "translate(0px, -50%)"
+        setTimeout(()=> hero.current.style.display = "none", 1000)
     }
     // This function causes animation effect            
     function showCards() {
-        setTimeout(firstProject, 300)
-        setTimeout(secondProject, 500)
-        setTimeout(thirdProject, 700)
+        firstProject()
+        secondProject()
+        thirdProject()
     }
     function projectText() {
-        webCardText.current.style.visibility = "visible"
-        webCardText.current.style.transition = "ease 1.5s"
-        webCardText.current.style.transform = "translate(0px, -600px)"
+        setTimeout(()=> {
+            webCardText.current.style.opacity = "1"
+            webCardText.current.style.marginTop = "-70px"
+            webCardText.current.style.transition = "ease 1.5s"
+            webCardText.current.style.transform = "translate(0px, 100px)"
+        }, 1001)
     }
     // This function raises and shows the first web project 
     function firstProject(){
+        setTimeout(()=> {
         const projectCard1 = webCards.current.childNodes[0]
         projectCard1.style.opacity = "1"
         projectCard1.style.transition = "ease 1s"
-        projectCard1.style.transform = "translate(0px, -450px)"
+        projectCard1.style.transform = "translate(0px, -100px)"
         projectCard1.onmouseover = ()=> projectCard1.style.width = "35rem"
         projectCard1.onmouseout = ()=> projectCard1.style.width = "25rem" 
+        }, 1500)
     }
     // This function raises and shows the first web project 
     function secondProject(){
+        setTimeout(()=> {
         const projectCard2 = webCards.current.childNodes[1]
         projectCard2.style.opacity = "1"
         projectCard2.style.transition = "ease 1s"
-        projectCard2.style.transform = "translate(0px, -450px)"
+        projectCard2.style.transform = "translate(0px, -100px)"
         projectCard2.onmouseover = ()=> projectCard2.style.width = "35rem"
         projectCard2.onmouseout = ()=> projectCard2.style.width = "25rem"
+        }, 1800)
     }
     // This function raises and shows the first web project 
     function thirdProject(){
+        setTimeout(()=> {
         const projectCard3 = webCards.current.childNodes[2]
         projectCard3.style.opacity = "1"
         projectCard3.style.transition = "ease 1s"
-        projectCard3.style.transform = "translate(0px, -450px)"
+        projectCard3.style.transform = "translate(0px, -100px)"
         projectCard3.onmouseover = ()=> projectCard3.style.width = "35rem"
         projectCard3.onmouseout = ()=> projectCard3.style.width = "25rem"
+        }, 2100)
     }
     function backgroundDark(){  
         const projectCard1 = webCards.current.childNodes[0]
@@ -133,7 +139,6 @@ const Websites = () => {
         <Nav 
         bgcolor = {darkMode}
         />
-        {/* <div className="jumbotron jumbotron-fluid mb-0"> */}
         <div ref={hero} className="container pt-5">
             <img src={require('./images/webAppImg02.png')} alt='code' className="img-fluid"/>
             <h2 className='jumbo-text text-center'>All Web Apps below are full stack</h2>
@@ -145,7 +150,6 @@ const Websites = () => {
             </button>
             </div>
         </div>
-        {/* </div> */}
 
         <div ref={webCardText} style={styles.projectText} className="container pt-5">
             <h2 className='jumbo-text'>Selected Projects</h2>
@@ -158,12 +162,6 @@ const Websites = () => {
             <p className='darkmode-text ml-3'>{darkMode ? 'Enable light mode' : 'Enable dark mode'}</p>
             </div>
         </div>
-
-        {/* 
-            OnClick on the card should also turn off all effects on cards and should replace 
-            it with an border on the active card and a gradiant to see text and buttons for 
-            github and the actual site. 
-        */}
 
         <div ref={webCards} style={styles.cardRow}> 
             {projects.map((card, index) => (
@@ -187,10 +185,10 @@ const Websites = () => {
                 tech = {feature.map((feat, index) => <li key={index} style={{fontSize:"2vw"}}>{feat}</li>)}
                 buttons = {
                     <>
-                    <a href={visit} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-primary btn-lg mx-2" style={{fontSize:"1vw"}}>
+                    <a href={visit} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-primary btn-lg mx-2" style={{fontSize:"3vw"}}>
                         <i className="fas fa-search"></i> Visit Site
                     </a>
-                    <a href={viewCode} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-secondary btn-lg mx-2" style={{fontSize:"1vw"}}>
+                    <a href={viewCode} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-secondary btn-lg mx-2" style={{fontSize:"3vw"}}>
                         <i className="fas fa-laptop-code"></i> View Code
                     </a>
                     </>

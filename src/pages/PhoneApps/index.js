@@ -61,8 +61,8 @@ const PhoneApps = () => {
     setTimeout(()=> {
       phoneCardText.current.style.opacity = "1"
       phoneCardText.current.style.marginTop = "-70px"
-      phoneCardText.current.style.transform = "translate(0px, 100px)"
       phoneCardText.current.style.transition = "ease 1.5s"   
+      phoneCardText.current.style.transform = "translate(0px, 100px)"
     }, 1001)
   }
   function firstProject(){
