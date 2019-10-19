@@ -53,6 +53,7 @@ const Websites = () => {
         webCards.current.style.display = "flex"
         hero.current.style.transition = "ease 1s"
         hero.current.style.transform = "translate(0px, -300px)"
+        // setTimeout(()=> hero.current.style.display = "none", 1000)
     }
     // This function causes animation effect            
     function showCards() {

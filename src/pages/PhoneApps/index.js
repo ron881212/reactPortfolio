@@ -23,23 +23,24 @@ const PhoneApps = () => {
   useLayoutEffect(()=> darkMode ? backgroundDark() : backgroundLight())
 
   const styles = {
-      cardRow: {
-         display: 'none',
-         flexWrap: 'wrap',
-         marginTop: '100px',
-         flexDirection: 'row',
-         justifyContent: 'space-evenly',
-      },
-      darkMode: {
-         display: 'flex',
-         flexDirection: 'row',
-          alignItems: 'baseline'
-       },
-       projectText: {
-         marginTop: '50px',
-         opacity: '0',
-         transform: 'translate(0px, 600px)'
-       }
+    cardRow: {
+      display: 'none',
+      flexWrap: 'wrap',
+      marginTop: '100px',
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      transform: 'translate(0px, 200px)'
+    },
+    darkMode: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'baseline'
+    },
+    projectText: {
+      marginTop: '140px',
+      opacity: '0',
+      transform: 'translate(0px, 100px)'
+    }
   }
 
   function showProjects() {
@@ -52,39 +53,50 @@ const PhoneApps = () => {
     setTimeout(()=> hero.current.style.display = "none", 1000)
   }
   function showCards() {
-    setTimeout(firstProject, 300)
-    setTimeout(secondProject, 500)
-    setTimeout(thirdProject, 700)
+    firstProject()
+    secondProject()
+    thirdProject()
   }
   function projectText() {
-    phoneCardText.current.style.opacity = "1"
-    phoneCardText.current.style.transition = "ease 1.5s"
-    // I need to lower the element in a way it is not affected by the hero "display none"
-    phoneCardText.current.style.transform = "translate(0px, -600px)"
+    setTimeout(()=> {
+      phoneCardText.current.style.opacity = "1"
+      phoneCardText.current.style.marginTop = "-70px"
+      phoneCardText.current.style.transform = "translate(0px, 100px)"
+      phoneCardText.current.style.transition = "ease 1.5s"   
+    }, 1001)
   }
   function firstProject(){
+    setTimeout(()=> {
     const projectCard1 = phoneCards.current.childNodes[0]
     projectCard1.style.opacity = "1"
     projectCard1.style.transition = "ease 1s"
-    // projectCard1.style.transform = "translate(0px, -450px)"
+    projectCard1.style.transform = "translate(0px, -100px)"
     projectCard1.onmouseover = ()=> projectCard1.style.width = "35rem"
     projectCard1.onmouseout = ()=> projectCard1.style.width = "25rem" 
+  }, 1500)
+
 }
 function secondProject(){
+  setTimeout(()=> {
     const projectCard2 = phoneCards.current.childNodes[1]
     projectCard2.style.opacity = "1"
     projectCard2.style.transition = "ease 1s"
-    // projectCard2.style.transform = "translate(0px, -450px)"
+    projectCard2.style.transform = "translate(0px, -100px)"
     projectCard2.onmouseover = ()=> projectCard2.style.width = "35rem"
     projectCard2.onmouseout = ()=> projectCard2.style.width = "25rem"
+  }, 1800)
+
 } 
 function thirdProject(){
+  setTimeout(()=> {
     const projectCard3 = phoneCards.current.childNodes[2]
     projectCard3.style.opacity = "1"
     projectCard3.style.transition = "ease 1s"
-    // projectCard3.style.transform = "translate(0px, -450px)"
+    projectCard3.style.transform = "translate(0px, -100px)"
     projectCard3.onmouseover = ()=> projectCard3.style.width = "35rem"
     projectCard3.onmouseout = ()=> projectCard3.style.width = "25rem"
+  }, 2100)
+
 }
   function backgroundDark(){  
       const projectCard1 = phoneCards.current.childNodes[0]
@@ -173,10 +185,10 @@ return(
             tech = {feature.map((feat, index) => <li key={index} style={{fontSize:"2vw"}}>{feat}</li>)}
             buttons = {
                 <>
-                <a href={visit} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-primary btn-lg mx-2" style={{fontSize:"1vw"}}>
+                <a href={visit} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-primary btn-lg mx-2" style={{fontSize:"3vw"}}>
             <i className="fas fa-search"></i> Visit Site
             </a>
-            <a href={viewCode} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-secondary btn-lg mx-2" style={{fontSize:"1vw"}}>
+            <a href={viewCode} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-secondary btn-lg mx-2" style={{fontSize:"3vw"}}>
                 <i className="fas fa-laptop-code"></i> View Code
             </a>
             </>
