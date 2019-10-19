@@ -27,6 +27,7 @@ const PhoneApps = () => {
       display: 'none',
       flexWrap: 'wrap',
       marginTop: '100px',
+      position: 'relative',
       flexDirection: 'row',
       justifyContent: 'space-evenly',
       transform: 'translate(0px, 200px)'
@@ -174,7 +175,7 @@ return(
                 }
                 />
             ))}
-      </div>
+    </div>
 
       { previews ? 
 

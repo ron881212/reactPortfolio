@@ -26,9 +26,11 @@ const Websites = () => {
         cardRow: {
            display: 'none',
            flexWrap: 'wrap',
-           marginTop: '300px',
+           marginTop: '100px',
+           position: 'relative',
            flexDirection: 'row',
            justifyContent: 'space-evenly',
+           transform: 'translate(0px, 200px)'
         },
         darkMode: {
            display: 'flex',
