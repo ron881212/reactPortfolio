@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, HashRouter } from "react-router-dom";
+import { Route, Switch, HashRouter } from "react-router-dom";
 import Websites from './pages/Websites'
 import PhoneApps from './pages/PhoneApps'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Nav from './components/Nav'
+// import Nav from './components/Nav'
 
 function App() {
   return (

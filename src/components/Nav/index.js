@@ -9,7 +9,7 @@ export default class NavBar extends React.Component {
       style={this.props.bgcolor ? {backgroundColor: "black"} : {backgroundColor: "white"}}
       >
         <div className='container'>
-          <a className="navbar-brand"
+          <a className="navbar-brand" href="#"
           style={this.props.bgcolor ? {color: "gray"} : {color: "black"}}>    
           Ronald Glover
           </a>

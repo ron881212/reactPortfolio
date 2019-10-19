@@ -47,7 +47,7 @@ const Contact = () => {
                       <div className="flip-card-back" onTouchStart={a}>
                         <h1>GitHub</h1> 
                         <p>View My Code</p> 
-                        <a href="https://github.com/ron881212" target="_blank" style={{color:'white'}}>Here</a>
+                        <a href="https://github.com/ron881212" target="_blank" rel="noopener noreferrer" style={{color:'white'}}>Here</a>
                       </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ const Contact = () => {
                       <div className="flip-card-back" onTouchStart={b}>
                         <h1>linkedIn</h1> 
                         <p>Stalk My Profile</p> 
-                        <a href="https://www.linkedin.com/in/ronald-glover" target="_blank" style={{color:'white'}}>Here</a>
+                        <a href="https://www.linkedin.com/in/ronald-glover" target="_blank" rel="noopener noreferrer" style={{color:'white'}}>Here</a>
                       </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@ const Contact = () => {
                       <div className="flip-card-back" onTouchStart={e}>
                         <h1>Resume</h1> 
                         <p>View My Resume</p> 
-                        <a href="https://docs.google.com/document/d/10Qc_AOlqtDxt5IpgpzsDnY20XY03okb8QBHTRt4mUJE/edit?usp=sharing" target="_blank" style={{color:'white'}}>Here</a>
+                        <a href="https://docs.google.com/document/d/10Qc_AOlqtDxt5IpgpzsDnY20XY03okb8QBHTRt4mUJE/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style={{color:'white'}}>Here</a>
                       </div>
                     </div>
                 </div>

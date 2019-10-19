@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import profile from './images/profilePic01.png'
 import Nav from '../../components/Nav'
 
