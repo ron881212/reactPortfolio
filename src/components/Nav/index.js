@@ -4,10 +4,11 @@ import './styling.css'
 
 export default class NavBar extends React.Component {  
   render() {
+    const lightBar = "navbar navbar-expand-lg navbar-light nav-style fixed-top"
+    const darkBar = "navbar navbar-expand-lg navbar-dark nav-style fixed-top"
     return (
-      <nav className="navbar navbar-expand-lg navbar-light nav-style fixed-top" 
-      style={this.props.bgcolor ? {backgroundColor: "black"} : {backgroundColor: "white"}}
-      >
+      <nav className={this.props.bgcolor ? darkBar: lightBar}
+      style={this.props.bgcolor ? {backgroundColor: "black"} : {backgroundColor: "white"}}>
         <div className='container'>
           <a className="navbar-brand" href="#"
           style={this.props.bgcolor ? {color: "gray"} : {color: "black"}}>    

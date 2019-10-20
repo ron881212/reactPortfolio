@@ -38,9 +38,27 @@ const Websites = () => {
            alignItems: 'baseline'
         },
         projectText: {
-            marginTop: '140px',
             opacity: '0',
+            marginTop: '140px',
             transform: 'translate(0px, 100px)'
+        },
+        jumboText: {
+            fontSize: '4vw',
+            fontFamily: 'Righteous, cursive'
+        },
+        jumboDark: {
+          color: 'white',
+          fontSize: '4vw',
+          fontFamily: 'Righteous, cursive'
+        },
+        infoText: {
+          fontSize: '2vw',
+          fontFamily: 'Righteous, cursive'
+        },
+        infoDark: {
+          color: 'white',
+          fontSize: '2vw',
+          fontFamily: 'Righteous, cursive'
         }
     }
 
@@ -123,7 +141,7 @@ const Websites = () => {
         setDarkMode(!darkMode)
     }
     function autoScroll() {
-        const scrollToRef = (ref) => window.scrollTo({top:ref.current.offsetTop / 1.5, left:0, behavior: 'smooth'})
+        const scrollToRef = (ref) => window.scrollTo({top:ref.current.offsetTop, left:0, behavior: 'smooth'})
         scrollToRef(webCards) 
     }
     function setNewVideo(newVideo, newFeature, newVideoTitle, newVisit, newViewCode){
@@ -154,8 +172,8 @@ const Websites = () => {
         </div>
 
         <div ref={webCardText} style={styles.projectText} className="container pt-5">
-            <h2 className='jumbo-text'>Selected Projects</h2>
-            <p className='info-text'>Click on cards to see a video of the project</p>
+            <h2 style={darkMode ? styles.jumboDark : styles.jumboText}>Selected Projects</h2>
+            <p style={darkMode ? styles.infoDark : styles.infoText}>Click on cards to see a video of the project</p>
             <div style={styles.darkMode}>
             <button onClick={enableDarkMode} style={{position: 'relative'}} type="button" className="moon-btn
             rounded-circle dark-btn d-flex justify-content-center">
@@ -187,10 +205,10 @@ const Websites = () => {
                 tech = {feature.map((feat, index) => <li key={index} style={{fontSize:"2vw"}}>{feat}</li>)}
                 buttons = {
                     <>
-                    <a href={visit} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-primary btn-lg mx-2" style={{fontSize:"3vw"}}>
+                    <a href={visit} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-primary btn-lg mx-2" style={{fontSize:"10px"}}>
                         <i className="fas fa-search"></i> Visit Site
                     </a>
-                    <a href={viewCode} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-secondary btn-lg mx-2" style={{fontSize:"3vw"}}>
+                    <a href={viewCode} target="_blank" rel="noopener noreferrer" role="button" className="btn btn-secondary btn-lg mx-2" style={{fontSize:"10px"}}>
                         <i className="fas fa-laptop-code"></i> View Code
                     </a>
                     </>
