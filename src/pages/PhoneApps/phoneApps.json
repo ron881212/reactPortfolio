@@ -1,56 +1,56 @@
 [
-    {
-        "name":"NBA Search",
-        "picture": "./images/webApps/nbaSearch.png",
-        "refName": "nba",
-        "clip": "./videos/NBAPreview01.mov",
+    {          
+        "name":"Special Flavors",
+        "picture": "./images/phoneApps/myFlavors.png",
+        "refName": "flavor",
+        "clip": "",
         "features":[
-            "HTML5",
-            "CSS3",
-            "Bootstrap",
-            "JavaScript",
-            "jQuery",
+            "Login",
+            "Redux",
+            "Profile",
             "Firebase",
-            "Ticketmaster API",
-            "News API",
-            "tinyAgo.js"
+            "React-Native",
+            "Shopping Cart",
+            "React-Native-Elements",
+            "Chat (in progress)",
+            "Paypal(in progress)"
         ],
-        "visit": "https://samtaub.github.io/Project-1/",
-        "viewCode":"https://github.com/SamTaub/Project-1"
+        "visit": "",
+        "viewCode":"https://github.com/ron881212/Special-Flavor"
     },
     {
-        "name":"My Funko Pop",
-        "picture": "./images/webApps/myFunko.png",
-        "refName": "funko",
-        "clip": "./videos/MyFunkoPreview01.mov",
+        "name":"Winc App",
+        "picture": "./images/phoneApps/myWinc.png",
+        "refName": "wincApp",
+        "clip": "",
         "features":[
-            "mysql",
-            "express",
-            "passport",
-            "node",
-            "path",
-            "jQuery-ui",
-            "travis for continuous integration"
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
         ],
-        "visit": "https://funky-funkos.herokuapp.com/",
-        "viewCode":"https://github.com/troynwynn/MyFunkoPop"
+        "visit": "",
+        "viewCode":"https://github.com/ron881212/WincStories"
     },
     {
-        "name":"Winc Stories",
-        "picture": "./images/webApps/wincStories.png",
-        "refName": "winc",
-        "clip": "./videos/WincPreview01.mov",
+        "name":"Empty",
+        "picture": "",
+        "refName": "empty",
+        "clip": "",
         "features":[
-            "Javascript/ES6",
-            "HTML/CSS",
-            "React",
-            "Node/Express",
-            "MySQL",
-            "Sequelize ORM",
-            "bcrypt and jwt",
-            "ReactSpring.js for animation"
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
         ],
-        "visit": "https://www.wincstories.com/",
-        "viewCode":"https://github.com/AKluger/Project-Three"
+        "visit": "",
+        "viewCode":""
     }
 ]
