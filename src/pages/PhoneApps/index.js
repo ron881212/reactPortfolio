@@ -74,7 +74,7 @@ const PhoneApps = () => {
   function showCards() {
     firstProject()
     secondProject()
-    thirdProject()
+    // thirdProject()
   }
   function projectText() {
     setTimeout(()=> {
@@ -106,34 +106,34 @@ function secondProject(){
   }, 1800)
 
 } 
-function thirdProject(){
-  setTimeout(()=> {
-    const projectCard3 = phoneCards.current.childNodes[2]
-    projectCard3.style.opacity = "1"
-    projectCard3.style.transition = "ease 1s"
-    projectCard3.style.transform = "translate(0px, -100px)"
-    projectCard3.onmouseover = ()=> projectCard3.style.width = "35rem"
-    projectCard3.onmouseout = ()=> projectCard3.style.width = "25rem"
-  }, 2100)
+// function thirdProject(){
+//   setTimeout(()=> {
+//     const projectCard3 = phoneCards.current.childNodes[2]
+//     projectCard3.style.opacity = "1"
+//     projectCard3.style.transition = "ease 1s"
+//     projectCard3.style.transform = "translate(0px, -100px)"
+//     projectCard3.onmouseover = ()=> projectCard3.style.width = "35rem"
+//     projectCard3.onmouseout = ()=> projectCard3.style.width = "25rem"
+//   }, 2100)
 
-}
+// }
   function backgroundDark(){  
       const projectCard1 = phoneCards.current.childNodes[0]
       const projectCard2 = phoneCards.current.childNodes[1]
-      const projectCard3 = phoneCards.current.childNodes[2]
+      // const projectCard3 = phoneCards.current.childNodes[2]
       document.body.style.backgroundColor = "black"
       projectCard1.style.backgroundColor = "black"
       projectCard2.style.backgroundColor = "black"
-      projectCard3.style.backgroundColor = "black"
+      // projectCard3.style.backgroundColor = "black"
   }
   function backgroundLight(){
       const projectCard1 = phoneCards.current.childNodes[0]
       const projectCard2 = phoneCards.current.childNodes[1]
-      const projectCard3 = phoneCards.current.childNodes[2]
+      // const projectCard3 = phoneCards.current.childNodes[2]
       document.body.style.backgroundColor = "white"
       projectCard1.style.backgroundColor = "white"
       projectCard2.style.backgroundColor = "white"
-      projectCard3.style.backgroundColor = "white"
+      // projectCard3.style.backgroundColor = "white"
   }
   function enableDarkMode(){
     setDarkMode(!darkMode)

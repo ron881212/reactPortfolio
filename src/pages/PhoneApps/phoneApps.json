@@ -3,7 +3,7 @@
         "name":"Special Flavors",
         "picture": "./images/phoneApps/myFlavors.png",
         "refName": "flavor",
-        "clip": "",
+        "clip": "./videos/SpecialFlavors.mov",
         "features":[
             "Login",
             "Redux",
@@ -15,42 +15,21 @@
             "Chat (in progress)",
             "Paypal(in progress)"
         ],
-        "visit": "",
+        "visit": "https://github.com/ron881212/Special-Flavor",
         "viewCode":"https://github.com/ron881212/Special-Flavor"
     },
     {
         "name":"Winc App",
         "picture": "./images/phoneApps/myWinc.png",
         "refName": "wincApp",
-        "clip": "",
+        "clip": "./videos/WincApp.mov",
         "features":[
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "reactstrap",
+            "react-native-elements",
+            "react-native-snap-carousel",
+            "react-native-vector-icons"
         ],
-        "visit": "",
+        "visit": "https://github.com/ron881212/WincStories",
         "viewCode":"https://github.com/ron881212/WincStories"
-    },
-    {
-        "name":"Empty",
-        "picture": "",
-        "refName": "empty",
-        "clip": "",
-        "features":[
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "visit": "",
-        "viewCode":""
     }
 ]

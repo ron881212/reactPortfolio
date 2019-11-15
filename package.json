@@ -1,5 +1,4 @@
 {
-  "homepage": "http://ron881212.github.io/reactPortfolio",
   "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
@@ -14,7 +13,7 @@
   },
   "scripts": {
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "aws s3 sync build/ s3://ronaldglover.dev",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
