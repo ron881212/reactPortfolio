@@ -19,6 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage" : "https://ron881212.github.io/reactPortfolio",
   "eslintConfig": {
     "extends": "react-app"
   },
