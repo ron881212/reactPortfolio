@@ -13,7 +13,7 @@
   },
   "scripts": {
     "predeploy": "yarn run build",
-    "deploy": "aws s3 sync build/ s3://ronald-portfolio && echo",
+    "deploy": "aws s3 sync build/ s3://www.ronaldglover.com && echo",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

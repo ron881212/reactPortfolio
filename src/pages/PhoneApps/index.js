@@ -165,7 +165,7 @@ return(
       <div className="d-flex justify-content-center">
       <button onClick={showProjects} type="button" className="btn btn-primary btn-lg 
       rounded-circle start-btn d-flex justify-content-center">
-        <i className="fas fa-desktop fa-2x "></i>
+        <i className="fas fa-desktop fa-2x align-self-center"></i>
       </button>
       </div>
     </div>
@@ -176,7 +176,7 @@ return(
       <div style={styles.darkMode}>
       <button onClick={enableDarkMode} style={{position: 'relative'}} type="button" className="moon-btn
       rounded-circle dark-btn d-flex justify-content-center">
-          <i className={ darkMode ? 'fas fa-sun' : 'fas fa-moon' }></i>
+          <i className={ darkMode ? 'fas fa-sun align-self-center' : 'fas fa-moon align-self-center' }></i>
       </button>
       <p className='darkmode-text ml-3'>{darkMode ? 'Enable light mode' : 'Enable dark mode'}</p>
       </div>
