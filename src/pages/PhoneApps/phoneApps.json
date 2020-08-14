@@ -12,24 +12,24 @@
             "React-Native",
             "Shopping Cart",
             "React-Native-Elements",
-            "Chat (in progress)",
-            "Paypal(in progress)"
+            "Chat",
+            "Paypal(in progress)",
+            "In App Stores Today!!!"
         ],
         "visit": "https://github.com/ron881212/Special-Flavor",
         "viewCode":"https://github.com/ron881212/Special-Flavor"
     },
     {
-        "name":"Winc App",
-        "picture": "./images/phoneApps/myWinc.png",
+        "name":"Pets App",
+        "picture": "./images/phoneApps/myPet.png",
         "refName": "wincApp",
-        "clip": "./videos/WincApp.mov",
+        "clip": "./videos/myPet.mov",
         "features":[
-            "reactstrap",
-            "react-native-elements",
-            "react-native-snap-carousel",
-            "react-native-vector-icons"
+            "expo",
+            "typescript",
+            "react-native-paper"
         ],
-        "visit": "https://github.com/ron881212/WincStories",
-        "viewCode":"https://github.com/ron881212/WincStories"
+        "visit": "https://github.com/ron881212/pets",
+        "viewCode":"https://github.com/ron881212/pets"
     }
 ]
