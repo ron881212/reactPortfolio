@@ -6,7 +6,7 @@
 
 This is a React Portfolio meant to show off a few full stack projects.
 
-[Deployed Link](https://www.ronaldglover.dev)
+[Deployed Link](https://www.ronaldglover.com)
 
 ## Full-Stack Projects
 
